@@ -1,0 +1,160 @@
+/* ======= SECCIÓN CONCIERTOS ======= */
+.concerts-section {
+    position: relative;
+    background: linear-gradient(270deg, #1a001a, #330000, #400040, #8000ff);
+    background-size: 600% 600%;
+    animation: backgroundFlow 20s ease infinite;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    overflow: hidden;
+}
+
+@keyframes backgroundFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 0, 68, 0.3), transparent 70%),
+        radial-gradient(circle at 80% 60%, rgba(128, 0, 255, 0.3), transparent 70%);
+    background-size: 200% 200%;
+    animation: lightsMove 8s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes lightsMove {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+.concerts-section h2 {
+    color: #ff0044;
+    font-size: 2.8rem;
+    text-shadow: 0 0 15px #ff0044, 0 0 25px #8000ff;
+    animation: tituloGlow 3s infinite alternate;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes tituloGlow {
+    from {
+        text-shadow: 0 0 10px #ff0044, 0 0 25px #8000ff;
+    }
+
+    to {
+        text-shadow: 0 0 20px #ff1aff, 0 0 40px #ff0044;
+    }
+}
+
+.concerts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.concert-card {
+    background: rgba(20, 0, 20, 0.9);
+    border: 2px solid #ff0044;
+    border-radius: 15px;
+    padding: 25px;
+    width: 260px;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px #8000ff50;
+    animation: cardVibe 3s infinite ease-in-out alternate;
+}
+
+@keyframes cardVibe {
+    0% {
+        box-shadow: 0 0 15px #8000ff80, 0 0 25px #ff004440;
+    }
+
+    50% {
+        box-shadow: 0 0 25px #ff0044, 0 0 40px #8000ff;
+        border-color: #ff1aff;
+    }
+
+    100% {
+        box-shadow: 0 0 15px #8000ff80, 0 0 25px #ff004440;
+        border-color: #ff0044;
+    }
+}
+
+.concert-card h3 {
+    color: #ff1a75;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.concert-card p {
+    margin: 5px 0;
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+.concert-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff0044, 0 0 35px #8000ff;
+}
+
+.concert-card .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: linear-gradient(90deg, #ff0044, #8000ff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.concert-card .btn:hover {
+    background: linear-gradient(90deg, #8000ff, #ff0044);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .concerts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .concert-card {
+        width: 85%;
+    }
+}
+
+/* ======= FOOTER ======= */
+footer {
+    background-color: #1a001a;
+    text-align: center;
+    padding: 15px;
+    color: #aaa;
+    font-size: 14px;
+    box-shadow: 0 -2px 10px #8000ff50;
+}

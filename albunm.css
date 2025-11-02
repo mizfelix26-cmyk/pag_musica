@@ -1,0 +1,156 @@
+/* ======= GALERÍA DE ÁLBUMES ======= */
+.album-gallery {
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #1a0000 0%, #0a0a0a 100%);
+    text-align: center;
+}
+
+/* Título con glow neon */
+.album-gallery h2 {
+    color: #ff00aa;
+    font-size: 40px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px #ff00aa, 0 0 30px #9900ff, 0 0 45px #ff0055;
+    animation: neonFlash 2s infinite alternate;
+}
+
+/* Mosaico centrado */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos de los álbumes con glow neon */
+.album-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid #ff00aa;
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+
+    /* Animaciones múltiples */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards, neonGlow 2s infinite alternate, floatSoft 4s ease-in-out infinite;
+}
+
+/* Animación en cascada para cada imagen */
+.album-grid img:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.album-grid img:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.album-grid img:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.album-grid img:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.album-grid img:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.album-grid img:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.album-grid img:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.album-grid img:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+.album-grid img:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+.album-grid img:nth-child(10) {
+    animation-delay: 1s;
+}
+
+.album-grid img:nth-child(11) {
+    animation-delay: 1.1s;
+}
+
+.album-grid img:nth-child(12) {
+    animation-delay: 1.2s;
+}
+
+/* Hover: agranda, gira y glow intenso */
+.album-grid img:hover {
+    transform: scale(1.12) rotateY(10deg) rotateX(5deg);
+    box-shadow: 0 0 40px #ff00aa, 0 0 80px #9900ff, 0 0 100px #ff0055;
+}
+
+/* ======= ANIMACIONES ======= */
+
+/* Fade in desde abajo */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow neon pulsante */
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 15px #ff00aa, 0 0 25px #9900ff;
+    }
+
+    25% {
+        box-shadow: 0 0 18px #ff33cc, 0 0 28px #aa33ff;
+    }
+
+    50% {
+        box-shadow: 0 0 15px #ff00aa, 0 0 25px #9900ff;
+    }
+
+    75% {
+        box-shadow: 0 0 20px #ff33cc, 0 0 30px #aa33ff;
+    }
+
+    100% {
+        box-shadow: 0 0 15px #ff00aa, 0 0 25px #9900ff;
+    }
+}
+
+/* Flotación suave + ligera vibración */
+@keyframes floatSoft {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0.2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-0.2deg);
+    }
+}
+
+/* Glow del título */
+@keyframes neonFlash {
+    0% {
+        text-shadow: 0 0 10px #ff00aa, 0 0 30px #9900ff;
+    }
+
+    100% {
+        text-shadow: 0 0 30px #ff33cc, 0 0 60px #aa33ff;
+    }
+}

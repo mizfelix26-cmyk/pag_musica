@@ -1,0 +1,109 @@
+html{
+    scroll-behavior: smooth;
+}
+
+/* ======= ESTILO GENERAL ======= */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+/* ======= NAVBAR ======= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #3d003d, #1a0000);
+    padding: 12px 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.4);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff1a1a;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #b300ff;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff1a1a, #b300ff);
+    transition: width 0.3s ease;
+}
+
+.menu li a:hover::after {
+    width: 100%;
+}
+
+.menu li a:hover {
+    color: #ff1a1a;
+    text-shadow: 0 0 10px #b300ff;
+}
+
+/* ======= MENÚ RESPONSIVE ======= */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #ff1a1a;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1a001a;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        text-align: center;
+        padding: 15px 0;
+        box-shadow: 0 5px 20px rgba(255, 0, 80, 0.3);
+    }
+
+    #menu-toggle:checked+.menu-icon+.menu {
+        display: flex;
+    }
+
+    .menu li {
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

@@ -1,0 +1,24 @@
+/* ======= SECCIÓN VIDEO ======= */
+.video-section {
+    background: linear-gradient(180deg, #1a001a, #0d0d0d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.video-container {
+    width: 80%;
+    max-width: 900px;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 0, 150, 0.4);
+    border: 2px solid rgba(255, 0, 100, 0.4);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

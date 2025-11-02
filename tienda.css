@@ -1,0 +1,126 @@
+.tienda-rock {
+    width: 100%;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0d000d, #1a001a);
+    color: #fff;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.tienda-rock h2 {
+    font-size: 42x;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #ff0033, #a000ff, #ff0033);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: colorCambio 4s ease-in-out infinite;
+    letter-spacing: 3px;
+}
+
+@keyframes colorCambio {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.slider-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding: 40px;
+    /* 👈 agrega espacio interno */
+    background: #120012;
+    /* opcional, para que se note el cuadro */
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 80, 0.3);
+}
+
+/* Slider horizontal */
+.slider-tienda {
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+}
+
+.slider-tienda::-webkit-scrollbar {
+    height: 8px;
+}
+
+.slider-tienda::-webkit-scrollbar-thumb {
+    background: #ff0033;
+    border-radius: 10px;
+}
+
+.producto {
+    flex: 0 0 180px;
+    background: #1a001a;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    font-size: 16px;
+    color: #ffcccc;
+}
+
+.producto:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 35px #ff1a75, 0 0 70px #a000ff;
+}
+
+@media (max-width: 900px) {
+    .slider-container {
+        width: 95%;
+    }
+
+    .producto {
+        flex: 0 0 140px;
+    }
+}
+
+/* Scrollbar personalizado para la tienda */
+.slider-container::-webkit-scrollbar {
+    height: 12px;
+    /* grosor del scroll */
+}
+
+.slider-container::-webkit-scrollbar-track {
+    background: #1a001a;
+    /* fondo del carril */
+    border-radius: 10px;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #ff0033, #a000ff);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 100, 0.6);
+}
+
+.slider-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #ff3366, #b300ff);
+    box-shadow: 0 0 15px rgba(255, 0, 100, 0.9);
+}
+
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+    /* más delgado */
+}
